@@ -10,6 +10,15 @@ $(document).ready(function(){
 		};
 	});
 
+	$(".js--info-section").waypoint(function(direction){
+		if(direction=="down"){
+			$("nav").addClass('sticky-nav');
+		}
+		else{
+			$("nav").removeClass('sticky-nav');
+		};
+	});
+
 	/*Scroll to contact*/
 	$(".js--scroll-to-contact").click(function() {
 		$('html, body').animate({scrollTop:$('.js-contact').offset().top}, 1000);
@@ -57,6 +66,12 @@ $(document).ready(function(){
 		$(".js--about-box").addClass('animate__animated animate__fadeIn');
 	}, {
 		offset:'50%'
+	});
+
+	$(".js--info-section").waypoint(function(direction){
+		$(".js--info-box").addClass('animate__animated animate__fadeInUp');
+	}, {
+		offset:'82%'
 	});
 
 	$(".js--services-section").waypoint(function(direction){
