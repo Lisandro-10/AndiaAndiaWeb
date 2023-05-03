@@ -1,26 +1,33 @@
 class ImageTransition{
-      constructor(photoSection, imgElement){
+      constructor(photoSection, imgElement, projectNumberPhotos, index){
             this.photoSection = document.getElementById('photo-section')
             this.imgElement = document.getElementById('photo-foto')
+            this.projectNumberPhotos = {
+                  obraGA: [1,2,3,4]
+            }
+            this.index = 1
       }
-      
 
       clickEvent(){
             var xCoord
-            var imgNumber = [1, 2, 3, 4]
             const changePhoto = e =>{
                   xCoord = e.clientX
                   var imgPath = "./resources/css/img/GA-"
                   var imgExt = ".jpg"
-                  if (xCoord >= '765') {
-                        this.imgElement.src = imgPath + imgNumber[2] + imgExt
-                        console.log(imgPath + imgNumber + imgExt)
+                  console.log(this.projectNumberPhotos.obraGA[this.i])
+                  if (this.i <= 0 || this.i > this.projectNumberPhotos.obraGA.length) {
+                        
                   }else{
-                        this.imgElement.src = imgPath + imgNumber[1] + imgExt
+                        if (xCoord >= '765') {
+                              this.i++
+                              this.imgElement.src = imgPath + this.projectNumberPhotos.obraGA[this.i] + imgExt
+                              console.log(imgPath + this.projectNumberPhotos.obraGA[this.i] + imgExt)
+                        }else{
+                              this.i--
+                              this.imgElement.src = imgPath + this.projectNumberPhotos.obraGA[this.i] + imgExt
                   }
-                  
+                  }
             }
-
 
             this.photoSection.addEventListener("click", changePhoto)
       }
@@ -29,4 +36,3 @@ class ImageTransition{
 
 var imageTransition = new ImageTransition()
 imageTransition.clickEvent()
-
