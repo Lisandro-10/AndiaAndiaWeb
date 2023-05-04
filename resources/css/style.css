@@ -181,7 +181,11 @@ header{
 }
 
 .header-box-text{
-	margin-bottom: 100px;
+	margin-bottom: 70px;
+}
+
+.header-box-text h1{
+      margin-bottom: 0;
 }
 
 .logo{
@@ -189,6 +193,11 @@ header{
 	width: auto;
 	float: left;
 	margin: 10px 10px;
+}
+
+.logo-home{
+      width: 80%;
+      height: auto;
 }
 
 /**** NAVIGATE SECTION ****/
